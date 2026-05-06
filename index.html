@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pro Clock Card</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TOP -->
+<div class="top-bar">
+<div class="title">⏰ Digital Clock</div>
+<button id="themeBtn">🌙</button>
+</div>
+
+<!-- GLASS HEADER -->
+<div class="glass-header">
+<h3 id="greeting"></h3>
+<h1 id="timeText">00:00:00</h1>
+<p id="date"></p>
+</div>
+
+<!-- CARD -->
+<div class="card">
+
+<div class="tabs">
+<button onclick="showTab('clock',this)" class="active">Clock</button>
+<button onclick="showTab('stopwatch',this)">Stopwatch</button>
+<button onclick="showTab('timer',this)">Timer</button>
+</div>
+
+<!-- CLOCK -->
+<div id="clockTab">
+<select id="timezone">
+<option value="Asia/Kolkata">India 🇮🇳</option>
+<option value="America/New_York">New York 🇺🇸</option>
+<option value="Europe/London">London 🇬🇧</option>
+<option value="Asia/Tokyo">Tokyo 🇯🇵</option>
+</select>
+</div>
+
+<!-- STOPWATCH -->
+<div id="stopwatchTab" class="hidden">
+<div id="sw">00:00:00</div>
+<div class="btns">
+<button onclick="startSW()">Start</button>
+<button onclick="stopSW()">Stop</button>
+<button onclick="resetSW()">Reset</button>
+</div>
+</div>
+
+<!-- TIMER -->
+<div id="timerTab" class="hidden">
+
+<div class="timer-inputs">
+<input id="hrs" type="number" placeholder="HH">
+<input id="mins" type="number" placeholder="MM">
+<input id="secs" type="number" placeholder="SS">
+</div>
+
+<div class="presets">
+<button onclick="setPreset(300)">5m</button>
+<button onclick="setPreset(600)">10m</button>
+<button onclick="setPreset(1500)">25m</button>
+</div>
+
+<div id="timerDisplay">00:00:00</div>
+
+<div class="progress">
+<div class="progress-fill" id="progressFill"></div>
+</div>
+
+<div class="btns">
+<button onclick="startTimer()">Start</button>
+<button onclick="pauseTimer()">Pause</button>
+<button onclick="resetTimer()">Reset</button>
+</div>
+
+</div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
